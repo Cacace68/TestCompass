@@ -110,6 +110,11 @@ Future enhancements may include:
 
 ---
 
+## History
+AAMC was first publicly documented in this repository in May 2026.
+
+---
+
 ## Contact
 
 For more information about AAMC or the TestCompass eMBT workflow, please visit the website or reach out via LinkedIn.
