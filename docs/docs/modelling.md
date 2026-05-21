@@ -1,10 +1,10 @@
 # Modelling
 
-Modelling is at the heart of early Model-Based Testing (eMBT).  
+Modelling is the foundation of early Model-Based Testing (eMBT).  
 In TestCompass, a model represents the intended behaviour of a system in a clear, structured, and explicit way.  
 It serves as a shared thinking tool for business and technical stakeholders, enabling early discovery of ambiguities, risks, and misunderstandings.
 
-This page explains the principles behind modelling in TestCompass and how models support systematic test generation and impact analysis.
+This page explains the conceptual principles behind modelling in TestCompass and how models support systematic test generation, impact analysis, and collaborative understanding.
 
 ---
 
@@ -51,13 +51,58 @@ Key principles:
 
 TestCompass models use a small set of node types to keep diagrams simple and readable:
 
-- **Start / End** — entry and exit points of the behaviour  
-- **Action / State** — steps or states in the flow  
-- **Decision** — yes/no or conditional branching  
-- **Result** — expected outcomes  
-- **Comment** — questions, ambiguities, or notes for review  
+- **Start**  
+  The entry point of the behaviour. A model always begins with exactly one Start node.
+
+- **Action / State**  
+  Represents an action or a state in the flow.  
+  Has exactly one outgoing link.
+
+- **Decision**  
+  Represents a branching point with two explicit outcomes: Yes and No.  
+  These branches are classified as test paths and are important for test generation.
+
+- **Result**  
+  Represents an expected outcome or observable effect.
+
+- **End**  
+  Represents the termination of the behaviour.  
+  A model must contain at least one End node.
+
+- **Comment**  
+  Used to capture questions, ambiguities, contradictions, or open ends.  
+  Comments are not connected to the flow and serve as prompts for review.
 
 These elements are sufficient to express complex behaviour without overwhelming the reader.
+
+---
+
+## Model Validation
+
+TestCompass automatically validates the structure of a model to ensure it is logically sound.  
+Validation checks include:
+
+- missing or incorrect links  
+- nodes with invalid numbers of incoming or outgoing transitions  
+- unreachable behaviour  
+- missing end nodes  
+- structural inconsistencies in decision logic  
+
+These validations help teams detect structural issues early, before generating tests or exporting artefacts.  
+Validation is not a replacement for review — it is a safeguard that supports clear, explicit modelling.
+
+---
+
+## Preconditions and Data
+
+Nodes may optionally contain preconditions or data.  
+When provided, these enrich the model and are automatically included in exported artefacts such as:
+
+- Excel test designs  
+- decision tables  
+- Gherkin feature files  
+
+Preconditions and data do not change the structure of the model, but they make the resulting test scenarios more concrete and executable.
 
 ---
 
@@ -82,15 +127,33 @@ This workflow ensures that modelling is not a one‑time activity but a continuo
 
 ---
 
-## Boundary Conditions and Decisions
+## Requirements Discovery Practices
 
-Every decision in the model should reflect:
+TestCompass supports collaborative requirements discovery practices such as:
 
-- the positive path  
-- the negative path  
-- relevant boundary values  
+- Feature Mapping  
+- Example Mapping  
 
-This ensures that the model captures the full behavioural space and supports strong test coverage strategies.
+These practices help teams explore behaviour, identify business rules, and clarify examples before modelling.  
+Because the maps are created directly in the modelling environment, they can be transformed into a complete model with minimal effort, ensuring continuity from discovery to modelling to test generation.
+
+---
+
+## Modelling with Gherkin
+
+TestCompass supports modelling using Gherkin concepts such as:
+
+- Feature  
+- Background  
+- Rule  
+- Given / When / Then  
+- And / But  
+- Examples  
+
+This allows teams to generate Gherkin feature files directly from the model, ensuring that executable specifications remain aligned with the behavioural structure.
+
+Gherkin modelling is flexible:  
+the model expresses the behaviour, while the Gherkin labels provide semantic meaning for BDD workflows.
 
 ---
 
@@ -126,12 +189,12 @@ The quality of the model determines the quality of the generated tests.
 ## Relationship to Impact Analysis
 
 When requirements change, the model is updated — not the tests.  
-TestCompass automatically identifies:
+TestCompass automatically identifies which generated scenarios are:
 
-- added behaviour  
-- removed behaviour  
-- changed behaviour  
-- unaffected behaviour  
+- added  
+- removed  
+- updated  
+- unchanged  
 
 This keeps test suites maintainable and aligned with evolving requirements.
 
@@ -141,4 +204,3 @@ This keeps test suites maintainable and aligned with evolving requirements.
 
 Modelling is not about drawing diagrams — it is about creating clarity.  
 TestCompass provides the structure, the notation, and the workflow to make that clarity possible.
-
