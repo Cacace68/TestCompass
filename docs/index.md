@@ -1,9 +1,9 @@
 # TestCompass Documentation
 
 Welcome to the TestCompass documentation.  
-This section provides the conceptual foundation behind early Model-Based Testing (eMBT), behavioural modelling, AI-assisted reasoning, test generation, impact analysis, and integrations.
+This section provides the conceptual foundation behind early Model-Based Testing (eMBT), behavioural modelling, AI-assisted reasoning, test generation, impact analysis and integrations.
 
-The documentation focuses on **why** TestCompass works the way it does — the principles, structures, and workflows that support clear reasoning and early discovery.  
+The documentation focuses on **why** TestCompass works the way it does — the principles, structures and workflows that support clear reasoning and early discovery.  
 It complements (but does not replace) the in‑product Quick Start Guide, which explains how to use the interface step by step.
 
 ---
