@@ -188,4 +188,14 @@ For more information about TestCompass or AI-assisted modelling, please reach ou
 
 ---
 
+## Documentation
+
+- [Overview](docs/overview.md)
+- [Modelling](docs/modelling.md)
+- [Test Generation](docs/test-generation.md)
+- [Impact Analysis](docs/impact-analysis.md)
+- [Integrations](docs/integrations.md)
+- [Export Formats](docs/export-formats.md)
+
+---
 **Happy Testing!** 🧪
