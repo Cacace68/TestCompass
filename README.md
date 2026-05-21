@@ -94,11 +94,71 @@ TestCompass integrates with:
 
 ## Example Mermaid Model
 
-```mermaid
-flowchart TD
-    Start --> Login
-    Login --> Dashboard
-    Dashboard --> Logout
+---
+title: "3.5 Hardware store (Phase Cover-physical)"
+---
+flowchart TB
+    node_1@{shape: circle, label: "Start"}
+    node_2@{shape: event, label: "Buy at Hardware Store"}
+    node_4@{shape: decision, label: "Total #gt; 200 euro?"}
+    node_5@{shape: decision, label: "Total #gt; 1000 euro?"}
+    node_6@{shape: decision, label: "Total = 200 euro?"}
+    node_7@{shape: decision, label: "Total = 1000 euro?"}
+    node_8@{shape: decision, label: "In buy #gt; 30 screwdrivers?"}
+    node_9@{shape: document, label: "Discount = 30%"}
+    node_12@{shape: decision, label: "In buy 30 screwdrivers?"}
+    node_13@{shape: document, label: "Discount 24%"}
+    node_14@{shape: decision, label: "In buy #gt; 30 screwdrivers?"}
+    node_15@{shape: document, label: "Discount = 14%"}
+    node_18@{shape: decision, label: "In buy 30 screwdrivers?"}
+    node_19@{shape: document, label: "Discount 4%"}
+    node_20@{shape: event, label: "In buy #lt; 30 screwdrivers"}
+    node_21@{shape: event, label: "In buy #lt; 30 screwdrivers"}
+    node_22@{shape: event, label: "Total #gt; 200 and #lt;1000."}
+    node_25@{shape: document, label: "Discount = 0%"}
+    node_37@{shape: event, label: "Total #lt; 200 euro"}
+    node_38@{shape: document, label: "Not possible to include #gt; 30 screwdrivers"}
+    node_39@{shape: double-circle, label: "End"}
+    node_41@{shape: decision, label: "In buy 30 screwdrivers?"}
+    node_42@{shape: event, label: "In buy #lt; 30 screwdrivers."}
+    node_43@{shape: document, label: "Discount 4%"}
+    node_44@{shape: decision, label: "In buy #gt; 30 screwdrivers?"}
+    node_45@{shape: document, label: "Discount = 14%"}
+    node_4-- No --> node_6
+    node_5 -- Yes --> node_8
+    node_8 -- Yes --> node_9
+    node_5-- No --> node_7
+    node_8-- No --> node_12
+    node_12 -- Yes --> node_13
+    node_14 -- Yes --> node_15
+    node_14-- No --> node_18
+    node_18 -- Yes --> node_19
+    node_7 -- Yes --> node_14
+    node_12-- No --> node_20
+    node_18-- No --> node_21
+    node_21 --> node_19
+    node_7-- No --> node_22
+    node_6-- No --> node_37
+    node_6 -- Yes --> node_38
+    node_19 --> node_39
+    node_15 --> node_39
+    node_13 --> node_39
+    node_41-- No --> node_42
+    node_42 --> node_43
+    node_22 --> node_44
+    node_44-- No --> node_41
+    node_45 --> node_39
+    node_41 -- Yes --> node_43
+    node_44 -- Yes --> node_45
+    node_43 --> node_39
+    node_25 --> node_39
+    node_38 --> node_25
+    node_37 --> node_38
+    node_2 --> node_4
+    node_4 -- Yes --> node_5
+    node_9 --> node_39
+    node_20 --> node_13
+    node_1 --> node_2
 
 ---
 
