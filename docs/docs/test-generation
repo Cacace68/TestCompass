@@ -1,1 +1,139 @@
+# Test Generation
+
+Test generation in TestCompass is based on the principle that well‑structured behavioural models enable systematic, reproducible, and risk‑aligned testing.  
+Once a model has been validated during the Exploratory and Review phases, TestCompass can automatically generate test scenarios using a selected coverage strategy.
+
+This page explains how test generation works conceptually and describes the coverage forms supported by TestCompass.
+
+---
+
+## Purpose of Test Generation
+
+The goal of test generation is to derive a set of test scenarios that:
+
+- reflect the intended behaviour of the system  
+- cover the relevant decisions, paths, and boundaries  
+- are reproducible and traceable  
+- align with the agreed level of risk and thoroughness  
+
+Because the tests are generated from the model, they remain consistent, structured, and easy to maintain.
+
+---
+
+## Coverage Strategies
+
+TestCompass supports multiple coverage strategies, ranging from lightweight to exhaustive.  
+Each strategy defines **what must be covered at least once** in the generated test set.
+
+The following coverage forms are available:
+
+---
+
+### Node Coverage (NC)
+
+Covers **all nodes** in the model at least once.  
+Nodes include:
+
+- Action/State nodes  
+- Decision nodes  
+- Result nodes  
+
+This is the lightest form of coverage and ensures that every part of the model is visited.
+
+---
+
+### Edge Coverage (EC)
+
+Covers **all edges** in the model at least once.  
+Edges represent the connections between nodes, including the Yes/No branches of decision nodes.
+
+Edge Coverage ensures that every transition in the behaviour is exercised.
+
+---
+
+### Path Pair Coverage (PPC)
+
+Covers **all combinations of two consecutive test paths**.  
+A “test path” follows the Yes or No branch from a decision node.
+
+This strategy captures interactions between consecutive decisions and is stronger than simple edge coverage.
+
+---
+
+### Path Triple Coverage (PTC)
+
+Covers **all combinations of three consecutive test paths**.  
+This provides deeper behavioural coverage and is useful when decisions influence each other across multiple steps.
+
+---
+
+### Full Path Coverage (FPC)
+
+Covers **all possible paths** from Start to End.  
+This is the strongest form of coverage and ensures that every unique behavioural sequence is tested.
+
+Full Path Coverage is exhaustive and typically results in the largest number of test scenarios.
+
+---
+
+## Selecting a Coverage Strategy
+
+The appropriate coverage strategy depends on:
+
+- **Risk level**  
+- **Complexity of the behaviour**  
+- **Criticality of the functionality**  
+- **Time and resources available**  
+- **Regulatory or quality requirements**  
+
+Teams often select coverage based on a product risk analysis or a lightweight risk discussion with business stakeholders.
+
+---
+
+## Exporting Test Scenarios
+
+Generated test scenarios can be exported to several formats, including:
+
+- Excel test design  
+- Excel decision tables  
+- Gherkin feature files  
+- CSV  
+
+These exports include:
+
+- node text  
+- decision logic  
+- expected results  
+- preconditions and test data (if provided in the model)
+
+➡️ See: [Export Formats](export-formats.md)
+
+---
+
+## Relationship to Modelling
+
+The quality of the generated tests depends directly on the quality of the model.  
+Clear decisions, explicit boundaries, and well‑defined outcomes lead to stronger and more meaningful test scenarios.
+
+➡️ Learn more: [Modelling](modelling.md)
+
+---
+
+## Relationship to Impact Analysis
+
+When requirements change, the model is updated — not the tests.  
+TestCompass identifies which generated scenarios are:
+
+- added  
+- removed  
+- updated  
+- unchanged  
+
+This keeps test suites aligned with evolving behaviour.
+
+➡️ Learn more: [Impact Analysis](impact-analysis.md)
+
+---
+
+Test generation in TestCompass ensures that testing is systematic, transparent, and grounded in explicit behavioural understanding — not assumptions.
 
