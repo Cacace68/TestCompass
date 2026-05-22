@@ -57,19 +57,18 @@ It acts as a thinking partner that supports critical reasoning and early discove
 
 TestCompass generates test scenarios directly from the model using multiple coverage strategies:
 
-- All paths  
-- Unique paths  
-- Minimal path set  
-- Decision coverage  
-- Boundary-oriented coverage  
-- Custom coverage constraints  
+- Node Coverage (NC)  
+- Edge Coverage (EC) 
+- Path Pair Coverage (PPC)  
+- Path Triple Coverage (PTC)  
+- Full Path Coverage (FPC) 
 
 Export options include:
 
 - Excel test design  
 - Excel decision tables  
 - Gherkin feature files  
-- CSV  
+- .CSV  
 
 ---
 
@@ -98,7 +97,8 @@ TestCompass integrates with:
 - Azure DevOps  
 - Jira  
 - Zephyr  
-- Xray  
+- Xray
+- QMetry
 - Other test management platforms  
 
 ---
