@@ -121,7 +121,7 @@ AAMC strengthens the early phase of modelling by providing a structured starting
 
 ---
 
-## Roadmap (Optional)
+## Roadmap
 
 Future enhancements may include:
 
