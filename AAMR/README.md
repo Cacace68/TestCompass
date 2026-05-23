@@ -4,6 +4,9 @@ AAMR (AI-Assisted Model Reflection) is an AI-supported capability within the Tes
 It analyses a behavioural model and asks targeted, context-aware questions that help uncover assumptions, identify risks, and strengthen the model.
 AAMR supports critical thinking and early discovery without taking control away from the tester.
 
+
+---
+
 Purpose
 
 AAMR is designed to help teams:
