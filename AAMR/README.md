@@ -78,9 +78,10 @@ Future enhancements may include:
 - domain‑specific reflection patterns
 - improved question clustering
 - tighter integration with AAMC
-- History
 
-## AAMR was first publicly documented in this repository in May 2026.
+## History
+
+AAMR was first publicly documented in this repository in May 2026.
 
 ## Contact
 
