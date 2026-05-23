@@ -7,7 +7,7 @@ AAMR supports critical thinking and early discovery without taking control away 
 
 ---
 
-Purpose
+## Purpose
 
 AAMR is designed to help teams:
 
@@ -18,7 +18,7 @@ improve the quality and consistency of models
 support deeper reasoning during modelling sessions
 AAMR acts as a thinking partner, not an expert system.
 
-How AAMR Works
+## How AAMR Works
 
 AAMR examines the structure and semantics of a model and generates:
 
@@ -30,7 +30,7 @@ risk‑oriented prompts
 suggestions for refinement
 The goal is not to “fix” the model automatically, but to help the tester think more clearly and make better decisions.
 
-What AAMR Is Not
+## What AAMR Is Not
 
 AAMR is not:
 
@@ -50,7 +50,7 @@ The model is refined and strengthened
 Test generation and impact analysis benefit from the improved clarity
 This workflow improves model quality and reduces downstream issues.
 
-Benefits
+## Benefits
 
 AAMR helps teams:
 
@@ -70,7 +70,7 @@ structured reasoning
 traceable test generation
 AAMR enhances the reflective part of modelling, complementing AAMC’s generative capabilities.
 
-Roadmap (Optional)
+## Roadmap
 
 Future enhancements may include:
 
