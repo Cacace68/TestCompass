@@ -109,10 +109,10 @@ flowchart TD
     F --> End([End])
     G --> H[Missing behaviour]
     H --> End([End])
+```
 
 
-
-Explanation
+## Explanation
 - AAMC performs the following:
 - Identifies decisions (“All mandatory fields filled?”, “Email verified?”)
 - Creates a clean, readable model without adding behaviour that is not explicitly described
