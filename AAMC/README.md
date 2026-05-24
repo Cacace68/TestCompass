@@ -72,6 +72,53 @@ The output is always:
 
 ---
 
+## Example: Generating an eMBT Model from Natural Language Requirements
+
+AAMC converts natural language requirements into a structured, semantically consistent eMBT model.  
+The example below demonstrates how AAMC interprets a short requirement, identifies decisions, and exposes incomplete behaviour without making assumptions.
+
+### Input Requirement (English)
+
+After creating an account, the system asks the user to complete their profile.
+The user provides the requested information.
+The system checks whether all mandatory fields are filled in.
+If all mandatory fields are provided, the system verifies the user’s email address.
+If the email is verified, the system activates the user’s account.
+If the email is not verified, the system informs the user that verification is required.
+(The requirement does not describe what happens if mandatory fields are missing.)
+(The requirement does not describe what happens after informing the user about email verification.)
+
+
+
+### Generated Model (Mermaid)
+
+```mermaid
+flowchart TD
+    Start([Start]) --> A[Ask user to complete profile]
+    A --> B[User provides requested information]
+    B --> C{All mandatory fields filled?}
+
+    C -->|Yes| D{Email verified?}
+    C -->|No| E[Missing behaviour]
+
+    D -->|Yes| F[Activate user's account]
+    D -->|No| G[Inform user that verification is required]
+
+    F --> End([End])
+    G --> H[Missing behaviour]
+    H --> End([End])
+
+
+Explanation
+- AAMC performs the following:
+- Identifies decisions (“All mandatory fields filled?”, “Email verified?”)
+- Creates a clean, readable model without adding behaviour that is not explicitly described
+- Leaves incomplete paths open, marking them as missing behaviour
+- Ensures semantic correctness according to eMBT rules
+
+This example illustrates how AAMC exposes ambiguity in requirements instead of hiding it, enabling teams to clarify missing behaviour early in the process.
+
+
 ## What AAMC Is *Not*
 
 AAMC is **not**:
